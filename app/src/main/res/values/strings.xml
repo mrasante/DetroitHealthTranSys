@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">DetroitHealthTranSys</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="map_view_section">Map</string>
+    <string name="bus_route_section">Bus Routes</string>
+    <string name="social_view_section">Social Route</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="remember_me">Remember me</string>
+    <string name="search_title">Search</string>
+    <string name="search_hint">To which hospital?</string>
+    <string name="feature_service_url">http://services.arcgis.com/Wl7Y1m92PbjtJs5n/arcgis/rest/services/Detroit_Transit/FeatureServer/0</string>
+    <string name="hospital_service_url">http://services.arcgis.com/Wl7Y1m92PbjtJs5n/arcgis/rest/services/Detroit_Hospitals/FeatureServer/0</string>
+    <string name="world_routing_service">http://route.arcgis.com/arcgis/rest/services/World/ClosestFacility/NAServer/ClosestFacility_World</string>
+
+    <plurals name="search_results">
+        <item quantity="one">%1$d result for \"%2$s\": </item>
+        <item quantity="other">%1$d results for \"%2$s\": </item>
+    </plurals>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_suggest_authority">com.example.android.searchabledict.DetHosContentProvider</string>
+    <string name="logininformation">Have a public arcgis.com account? Log in here, else use facebook</string>
+    <string name="username">arcgis.com username</string>
+    <string name="arcgispassword">arcgis.com password</string>
+    <string name="facebook_app_id">112806582566356</string>
+    <string name="fb_login_protocol_scheme">fb112806582566356</string>
+    <string name="greeting">Move around Detroit with Ease</string>
+    <string name="credentialfilename">credentialfile.txt</string>
+    <string name="esriportalurl">https://www.arcgis.com</string>
+    <string name="alertdialogtitle">Authenticate</string>
+    <string name="positivebutton">Positive</string>
+    <string name="negativebutton">Negative</string>
+    <string name="authmessage">Authenticate with ArcGIS online</string>
+    <string name="arcgisdevelopercliendID">LcRk8SWl1CyQJnD1</string>
+    <string name="arcgisdeveloperclientSecret">8215667b9ece4f3fab2643f0d11b9cfe</string>
+    <string name="implement_an_encryption_pattern">Implement an encryption pattern</string>
+    <string name="arcgistrafficserviceurl">https://traffic.arcgis.com/arcgis/rest/services/World/Traffic/MapServer</string>
+
+    <string name= "heremapslicensekey">NNcB1ktj/npJZk7GyIy+1XLw1vhohLx6/8DfCPOOl0REg+E4bAht5qjdVRCJN3Dqnf8tGoxaFRsQhdEA1S0LRIyd5Nhp075D/I2Q9Ruusi5CjPMHdqOCW6WijhAozaXc48uLMPAuWA4UQVERTSGx7Ar4CsohbWeOv9d2kwepHOfVENDhOoBX5W+WcnhhhAbEyCSooDj79fwmcpXd0zqU4zYJvJDi0jM0UyWkJreG1kUGDh86Twyfbe28q1vdcotCnQXLebVOnINGUBdCNU4F7lEtuHNRDHcpqBu+zNkpctc+HQvdfAMygS/uuHHsLTx7CYWxqLkKqbFsVkt28YVtcueD1UthhQiucSqWu+OEKiZ4cpIUNr3TuiRfw/hSJfrCU4kyTTdwM8cCO+d6r8sMqkGaHogFh9Xn9zrJGrM+HW77Yq9Ta2uHdTd73ltdolPYB6UpacINcpZlx21gHSsH8GjyUemqOF6BFdxADnNwooKNDw2Ilh9/gIk+T61IEWXbVqLROFUqfa8ma7732DerVFu3v2PpiWYpumoZOn7sSG+o+3OVbETe732KFxj929Trg6Ox6D2MnjW2hPIs2MtVBdzy38TYLk4Jd/R80S1/2+QNwvuK4X/Hsh/Sol6NkIzsnW+Ln2iL0Js7qs5cFrEfTxHWyv80ex2k+mNlN2awems</string>
+</resources>

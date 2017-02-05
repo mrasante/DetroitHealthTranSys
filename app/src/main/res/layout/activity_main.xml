@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="main.dettrans.hacks.kwasi.com.detroithealthtransys.MainActivity">
+<android.support.v7.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/material_drawer_dark_background"></android.support.v7.widget.Toolbar>
+
+
+    <!--<com.esri.android.map.MapView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/map_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        url="http://www.arcgis.com/home/webmap/viewer.html?webmap=e229d715f7ca4fa980308549fb288165"/>-->
+
+    <com.esri.android.map.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        url="http://ess.maps.arcgis.com/home/webmap/viewer.html?webmap=37cd72bd733f47f9b2c7faeedbd7f7f1"
+        mapoptions.ZoomLevel="6"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        mapoptions.center="42.35, -83.08">
+    </com.esri.android.map.MapView>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/float_extent_max"
+        android:src="@drawable/extent"
+        app:fabSize="mini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="13dp"
+        android:layout_alignTop="@+id/my_location"
+        android:layout_alignParentEnd="true" />
+
+    <android.support.design.widget.FloatingActionButton
+    app:fabSize="mini"
+    android:src="@drawable/home"
+    android:id="@+id/floating_home"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignStart="@+id/float_extent_max" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/my_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="mini"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="34dp"
+        android:src="@drawable/ic_my_location"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+
+</RelativeLayout>

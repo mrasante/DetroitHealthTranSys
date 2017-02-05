@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+>
+
+        <RelativeLayout
+            android:id="@+id/sheet_grid"
+            android:layout_width="match_parent"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+            android:layout_height="372dp">
+
+
+            <TextView
+                android:id="@+id/legend_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="11dp"
+                android:textSize="18sp"
+                android:textAlignment="textStart" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/sheet_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:textAlignment="viewStart"
+                android:layout_below="@+id/legend_text"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="21dp">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/social_share"
+                android:id="@+id/imageButton"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="28dp"
+                android:layout_alignStart="@+id/sheet_recycler"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>
