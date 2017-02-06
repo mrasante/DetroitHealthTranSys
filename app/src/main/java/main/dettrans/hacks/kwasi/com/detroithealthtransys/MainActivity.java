@@ -576,6 +576,7 @@ public class MainActivity extends AppCompatActivity implements SearchFragment.On
                         new PrimaryDrawerItem().withName("Hospitals").withIcon(R.drawable.hospital).withIdentifier(3).withTextColor(Color.WHITE),
                         new PrimaryDrawerItem().withName("Bus Stops").withIcon(R.drawable.bus).withIdentifier(4).withTextColor(Color.WHITE),
                         new PrimaryDrawerItem().withName("Traffic").withIcon(R.drawable.traffic).withIdentifier(5).withTextColor(Color.WHITE),
+                        new PrimaryDrawerItem().withName("Change Basemap").withIcon(R.drawable.basemap).withIdentifier(6).withTextColor(Color.WHITE),
 
                         new SectionDrawerItem().withDivider(true),
                         new SecondaryDrawerItem().withName("Settings").withIcon(R.drawable.settings).withTextColor(Color.WHITE),
@@ -597,6 +598,8 @@ public class MainActivity extends AppCompatActivity implements SearchFragment.On
                             toggleBusStops();
                         }else if(drawerItem.getIdentifier() == 5){
                             toggleTrafficData();
+                        }else if(drawerItem.getIdentifier() == 6){
+                            chooseBasemap();
                         }
                         return false;
                     }
@@ -635,6 +638,10 @@ public class MainActivity extends AppCompatActivity implements SearchFragment.On
                 return crossfadeDrawerLayout.isCrossfaded();
             }
         });
+    }
+
+    private void chooseBasemap() {
+        //TODO implement method to choose basemap from a fragment
     }
 
     private void toggleTrafficData() {
