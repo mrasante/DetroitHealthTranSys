@@ -40,6 +40,7 @@ import com.here.android.mpa.urbanmobility.ErrorCode;
 import com.here.android.mpa.urbanmobility.TransportType;
 import com.here.android.mpa.urbanmobility.b;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -165,13 +166,28 @@ public class PerformClosestFacilityFunction extends AsyncTask<ClosestFacilityPar
         routeOne = result.getRoutes().get(0);
         //symbolize the route
         SimpleLineSymbol simpleLineSymbol = new SimpleLineSymbol(Color.BLUE, 4, SimpleLineSymbol.STYLE.SOLID);
-        PictureMarkerSymbol pictureMarkerSymbol = new PictureMarkerSymbol(mapView.getContext(),
-                mapView.getResources().getDrawable(R.drawable.destination, mapView.getContext().getTheme()));
+        /*PictureMarkerSymbol pictureMarkerSymbol = new PictureMarkerSymbol(mapView.getContext(),
+                mapView.getResources().getDrawable(R.drawable.destination, mapView.getContext().getTheme()));*/
+        PictureMarkerSymbol pictureMarkerSymbol = new PictureMarkerSymbol();
+        pictureMarkerSymbol.setUrl("http://static.arcgis.com/images/Symbols/Transportation/CheckeredFlag.png");
+        try {
+            pictureMarkerSymbol.fetchDrawable();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         final Graphic routeGraphic = new Graphic(routeOne.getRouteGraphic().getGeometry(), simpleLineSymbol);
         //this is the closest hospital to the user's location
         //which now becomes the incident for the next analysis
         endGraphic = new Graphic(((Polyline) routeGraphic.getGeometry()).getPoint(
                 ((Polyline) routeGraphic.getGeometry()).getPointCount() - 1), pictureMarkerSymbol);
+        PictureMarkerSymbol originPictureMarkerSymbol = new PictureMarkerSymbol();
+        originPictureMarkerSymbol.setUrl("http://static.arcgis.com/images/Symbols/Basic/RedStickpin.png");
+        try {
+            originPictureMarkerSymbol.fetchDrawable();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        final Graphic startGraphic = new Graphic(originPoint, originPictureMarkerSymbol);
         destPoint = (Point) endGraphic.getGeometry();
         destinationPointToUse = (Point) GeometryEngine.project(destPoint, inputSR, SpatialReference.create(4326));
 
@@ -183,7 +199,7 @@ public class PerformClosestFacilityFunction extends AsyncTask<ClosestFacilityPar
                     UMRouter umRouter = new UMRouter();
                     UMRouteOptions umRouteOptions = new UMRouteOptions();
                     b b = new b();
-                    umRouteOptions.setTransportOptions(TransportType.BUS, b);
+                    umRouteOptions.setTransportOptions(TransportType.BUS_RAPID, b);
                     umRouteOptions.setPublicTransportTypeAllowed(TransitType.BUS_PUBLIC, true);
                     umRouteOptions.setTransitWalkMaxDistance(1000);
                     umRouteOptions.setTransitWalkTimeMultiplier(0.75f);
@@ -216,9 +232,9 @@ public class PerformClosestFacilityFunction extends AsyncTask<ClosestFacilityPar
                                 }
 
 
-                                SimpleLineSymbol stopPatternSymbol = new SimpleLineSymbol(Color.GREEN, 4, SimpleLineSymbol.STYLE.SOLID);
+                                SimpleLineSymbol stopPatternSymbol = new SimpleLineSymbol(Color.BLUE, 6, SimpleLineSymbol.STYLE.SOLID);
                                 Graphic routeLineGraphic = new Graphic(polyline, stopPatternSymbol);
-                                routeGraphicsLayer.addGraphics(new Graphic[]{routeGraphic, routeLineGraphic, endGraphic});
+                                routeGraphicsLayer.addGraphics(new Graphic[]{routeLineGraphic, startGraphic, endGraphic});
                                 mapView.setExtent(polyline, 500);
                                 BottomSheetDialog bottomSheetDialog = MainActivity.showBottomSheeet("Testing Show");
                                 TextView bottomSheetLegend = (TextView) bottomSheetDialog.findViewById(R.id.legend_text);

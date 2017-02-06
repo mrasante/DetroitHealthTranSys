@@ -15,7 +15,6 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -274,8 +273,8 @@ public class MainActivity extends AppCompatActivity implements SearchFragment.On
         bottomSheetDialog.setTitle(title);
         View bottomsheetView = LayoutInflater.from(mapView.getContext()).inflate(R.layout.bottomsheet, null);
         bottomSheetDialog.setContentView(bottomsheetView);
-        BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from(bottomsheetView.findViewById(R.id.sheet_grid));
-        bottomSheetBehavior.setPeekHeight(20);
+     /*   BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from(bottomsheetView.findViewById(R.id.sheet_grid));
+        bottomSheetBehavior.setPeekHeight(20);*/
         bottomSheetDialog.show();
         return bottomSheetDialog;
     }
