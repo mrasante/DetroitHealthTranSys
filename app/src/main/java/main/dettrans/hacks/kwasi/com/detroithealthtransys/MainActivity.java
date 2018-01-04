@@ -649,7 +649,7 @@ public class MainActivity extends AppCompatActivity implements SearchFragment.On
         //getSupportFragmentManager().beginTransaction().add(R.id.map_view, esriAuthenticator, "AuthenticationFrag").commit();
        //UserCredentials userCredentials = esriAuthenticator.getUserLoginCredentials();
         UserCredentials userCredentials = new UserCredentials();
-        userCredentials.setUserAccount("mrasante1", "apple@4GONES");
+        userCredentials.setUserAccount("NULL", "NULL");
         trafficServiceMapLayer = new ArcGISDynamicMapServiceLayer(getString(R.string.arcgistrafficserviceurl),
                 null, userCredentials, true);
         mapView.addLayer(trafficServiceMapLayer);
